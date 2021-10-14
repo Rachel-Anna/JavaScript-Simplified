@@ -37,6 +37,7 @@ form.addEventListener("submit", (e) => {
 function renderToDos(todo) {
   const template = document.getElementById("list-item-template");
   const templateClone = template.content.cloneNode(true);
+  console.log(templateClone);
   const textNode = templateClone.querySelector("[data-list-item-text]");
   textNode.innerText = todo.name;
   const listItem = templateClone.querySelector(".list-item");
