@@ -1,17 +1,20 @@
 import items from "../items.json";
 
-const productsCart = document.querySelector("#shopping-cart");
+const shoppingCartContainer = document.querySelector("#shopping-cart");
+const productsCartContent =
+  document.querySelector("#shopping-cart").children[0];
 const basketContainer = document.querySelector("#basket-container");
+const productCartBtn = document.querySelector("#shopping-cart-btn");
 
 document.addEventListener("click", (e) => {
   if (e.target.matches("#addProduct")) {
     addItemToBasket(e);
-    productsCart.classList.remove("invisible");
+    shoppingCartContainer.classList.remove("invisible");
   }
 });
 
-productsCart.addEventListener("click", () => {
-  productsCart.children[0].classList.toggle("invisible");
+productCartBtn.addEventListener("click", () => {
+  productsCartContent.classList.toggle("invisible");
 });
 
 let itemsInBasketIDs = [];
@@ -21,11 +24,13 @@ counter = items.map(({ id }) => {
 let totalPriceofAllBasketItems = 0;
 
 function addItemToBasket(e) {
+  if (productsCartContent.classList.contains("invisible")) {
+    productsCartContent.classList.remove("invisible");
+  }
   const templateBasketItem = document.querySelector("#basket-item");
   const templateBasketItemClone = templateBasketItem.content.cloneNode(true);
-  const currentProductType = templateBasketItemClone.querySelector(
-    "#basket-item-product-type"
-  );
+  const currentProductType =
+    templateBasketItemClone.querySelector(`[data-product-id]`);
 
   let productName =
     e.target.previousElementSibling.querySelector("#product-name").innerText;
@@ -47,7 +52,7 @@ function addItemToBasket(e) {
   const color = templateBasketItemClone.querySelector("#basket-item-color");
   color.innerText = productInfo.name;
 
-  const totalPrice = productsCart.querySelector("#basket-total");
+  const totalPrice = productsCartContent.querySelector("#basket-total");
   totalPrice.innerText = calculateTotalPrice(
     calculateIndividualItemPrice(
       productInfo.priceCents,
