@@ -17,10 +17,11 @@ productCartBtn.addEventListener("click", () => {
   productsCartContent.classList.toggle("invisible");
 });
 
-let itemsInBasketIDs = [];
-counter = items.map(({ id }) => {
-  return { [id]: 0 }; //creates an array of objects. Each object is the id plus the corresponding counter
-});
+// let itemsInBasketIDs = [];
+let itemsInBasket = [];
+// counter = items.map(({ id }) => {
+//   return { [id]: 0 }; //creates an array of objects. Each object is the id plus the corresponding counter
+// });
 let totalPriceofAllBasketItems = 0;
 
 function addItemToBasket(e) {
@@ -29,74 +30,81 @@ function addItemToBasket(e) {
   }
   const templateBasketItem = document.querySelector("#basket-item");
   const templateBasketItemClone = templateBasketItem.content.cloneNode(true);
-  const currentProductType =
-    templateBasketItemClone.querySelector(`[data-product-id]`);
+  const currentProductType = templateBasketItemClone.querySelector(
+    `[data-basket-product-id]`
+  );
 
   let productName =
     e.target.previousElementSibling.querySelector("#product-name").innerText;
-  const productInfo = items.find((item) => {
+  let productInfo = items.find((item) => {
     return item.name === productName;
   });
-  currentProductType.dataset.productId = productInfo.id;
+  currentProductType.dataset.basketProductId = productInfo.id;
+  productInfo = { ...productInfo, counter: 0 };
+  //the below adds the selected product to the itemsInBasketArray if there isn't anything already there
 
   const itemCount = templateBasketItemClone.querySelector("#basket-item-count");
-  itemCount.innerText = countIndividualBasketItems(counter, currentProductType);
+  itemCount.innerText = countIndividualBasketItems(productInfo.counter);
 
-  const price = templateBasketItemClone.querySelector("#basket-item-price");
-  price.innerText = calculateIndividualItemPrice(
-    productInfo.priceCents,
-    counter,
-    currentProductType
-  )[0];
+  // const price = templateBasketItemClone.querySelector("#basket-item-price");
+  // price.innerText = calculateIndividualItemPrice(
+  //   productInfo.priceCents,
+  //   counter,
+  //   currentProductType
+  // )[0];
 
   const color = templateBasketItemClone.querySelector("#basket-item-color");
   color.innerText = productInfo.name;
 
-  const totalPrice = productsCartContent.querySelector("#basket-total");
-  totalPrice.innerText = calculateTotalPrice(
-    calculateIndividualItemPrice(
-      productInfo.priceCents,
-      counter,
-      currentProductType
-    )[1]
-  );
+  // const totalPrice = productsCartContent.querySelector("#basket-total");
+  // totalPrice.innerText = calculateTotalPrice(
+  //   calculateIndividualItemPrice(
+  //     productInfo.priceCents,
+  //     counter,
+  //     currentProductType
+  //   )[1]
+  // );
 
   const image = templateBasketItemClone.querySelector("#basket-item-image");
   const imgURLStem = "https://dummyimage.com/420x260/";
   image.src = `${imgURLStem}${productInfo.imageColor}/${productInfo.imageColor}`;
 
-  //create an array of the items which were added to the basket, using the id
-  //if an item with this id already exists, don't add it to the basket but instead
-  //increment the counter and adjust the price
-
   basketContainer.appendChild(templateBasketItemClone);
-  updateBasket(
-    productInfo,
-    templateBasketItemClone,
-    price,
-    currentProductType,
-    itemCount
-  );
+
+  if (itemsInBasket.length === 0) {
+    itemsInBasket.push(productInfo);
+    //basketContainer.appendChild(templateBasketItemClone);
+  } else {
+    updateBasket(
+      productInfo,
+      templateBasketItemClone,
+
+      currentProductType
+    );
+  }
 }
 
 function updateBasket(
   productInfo,
   templateBasketItemClone,
-  price,
-  currentProductType,
-  itemCount
+  currentProductType
 ) {
-  if (itemsInBasketIDs.length === 0) {
-    itemsInBasketIDs.push(productInfo.id.toString());
-  } else if (itemsInBasketIDs.includes(currentProductType.dataset.productId)) {
+  if (
+    itemsInBasket.some(
+      (product) =>
+        product.id.toString() === currentProductType.dataset.basketProductId
+    )
+  ) {
     console.log("there was a match");
+    console.log(itemsInBasket);
     let elToRemove = basketContainer.querySelector(
-      `[data-product-id="${currentProductType.dataset.productId}"]`
+      `[data-basket-product-id="${currentProductType.dataset.basketProductId}"]`
     );
     elToRemove.remove(); //removes the previous element that was created by the addItemToBasket
   } else {
     console.log("no match");
-    itemsInBasketIDs.push(productInfo.id.toString());
+    console.log(itemsInBasket);
+    itemsInBasket.push(productInfo);
     basketContainer.appendChild(templateBasketItemClone);
   }
 }
@@ -119,14 +127,10 @@ function calculateTotalPrice() {
   //product that's inthe basket. Add them together
 }
 
-function countIndividualBasketItems(counter, currentProductType) {
-  counter[currentProductType.dataset.productId - 1][
-    currentProductType.dataset.productId
-  ] += 1;
+function countIndividualBasketItems(counter) {
+  counter += 1;
 
-  return counter[currentProductType.dataset.productId - 1][
-    currentProductType.dataset.productId
-  ];
+  return counter;
 }
 
 /* 
