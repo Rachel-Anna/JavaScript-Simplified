@@ -3,6 +3,7 @@ import globalEventListener from "../scripts/utils/globalEventListener";
 import currencyFormatter from "../scripts/utils/currencyFormatter";
 
 const shoppingCartContainer = document.querySelector("#shopping-cart");
+const check = document.querySelector("#check");
 const productsCartContent =
   document.querySelector("#shopping-cart").children[0];
 const basketContainer = document.querySelector("#basket-container");
@@ -10,7 +11,18 @@ const productCartBtn = document.querySelector("#shopping-cart-btn");
 const LOCAL_STORAGE_PREFIX = "shopping-app";
 const SAVED_ITEMS = `${LOCAL_STORAGE_PREFIX}-basket`;
 
-let itemsInBasket = [];
+let itemsInBasket = JSON.parse(localStorage.getItem(SAVED_ITEMS)) || [];
+loadCart();
+
+function loadCart() {
+  if (itemsInBasket.length > 0) {
+    shoppingCartContainer.classList.remove("invisible");
+    productsCartContent.classList.add("invisible");
+    renderBasket();
+  } else {
+    hideBasket();
+  }
+}
 
 globalEventListener("click", "#addProduct", (e) => {
   const selectedProduct = items.find(
@@ -20,10 +32,9 @@ globalEventListener("click", "#addProduct", (e) => {
   );
 
   addBasketItemToList(selectedProduct);
-  renderBasket(selectedProduct);
+  renderBasket();
   saveBasket();
   showBasket();
-  //setTimeout(hideBasket, 1000);
 });
 
 globalEventListener("click", "[data-remove-from-cart-button]", (e) => {
@@ -43,7 +54,12 @@ function showBasket() {
   productsCartContent.classList.remove("invisible");
 }
 function hideBasket() {
-  productsCartContent.classList.add("invisible");
+  if (itemsInBasket.length > 0) {
+    productsCartContent.classList.add("invisible");
+  } else {
+    shoppingCartContainer.classList.add("invisible");
+    productsCartContent.classList.add("invisible");
+  }
 }
 
 function addBasketItemToList(selectedProduct) {
@@ -56,11 +72,14 @@ function addBasketItemToList(selectedProduct) {
   } else {
     itemsInBasket.push({ ...selectedProduct, quantity: 1 });
   }
+  saveBasket();
 }
 
-function renderBasket(selectedProduct) {
+function renderBasket() {
   basketContainer.innerHTML = ""; //clears the cart before rerendering
-
+  if (itemsInBasket.length === 0) {
+    hideBasket();
+  }
   itemsInBasket.forEach((basketItem) => {
     const templateBasketItem = document.querySelector("#basket-item");
     const templateBasketItemClone = templateBasketItem.content.cloneNode(true);
