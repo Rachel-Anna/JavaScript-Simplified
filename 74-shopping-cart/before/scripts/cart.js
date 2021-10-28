@@ -1,144 +1,115 @@
 import items from "../items.json";
+import globalEventListener from "../scripts/utils/globalEventListener";
+import currencyFormatter from "../scripts/utils/currencyFormatter";
 
 const shoppingCartContainer = document.querySelector("#shopping-cart");
 const productsCartContent =
   document.querySelector("#shopping-cart").children[0];
 const basketContainer = document.querySelector("#basket-container");
 const productCartBtn = document.querySelector("#shopping-cart-btn");
+const LOCAL_STORAGE_PREFIX = "shopping-app";
+const SAVED_ITEMS = `${LOCAL_STORAGE_PREFIX}-basket`;
 
-document.addEventListener("click", (e) => {
-  if (e.target.matches("#addProduct")) {
-    addItemToBasket(e);
-    shoppingCartContainer.classList.remove("invisible");
-  }
+let itemsInBasket = [];
+
+globalEventListener("click", "#addProduct", (e) => {
+  const selectedProduct = items.find(
+    (item) =>
+      item.name ===
+      e.target.previousElementSibling.querySelector("#product-name").innerText
+  );
+
+  addBasketItemToList(selectedProduct);
+  renderBasket(selectedProduct);
+  saveBasket();
+  showBasket();
+  //setTimeout(hideBasket, 1000);
+});
+
+globalEventListener("click", "[data-remove-from-cart-button]", (e) => {
+  removeBasketItemFromList(e);
 });
 
 productCartBtn.addEventListener("click", () => {
-  productsCartContent.classList.toggle("invisible");
+  if (productsCartContent.classList.contains("invisible")) {
+    showBasket();
+  } else {
+    hideBasket();
+  }
 });
 
-// let itemsInBasketIDs = [];
-let itemsInBasket = [];
-// counter = items.map(({ id }) => {
-//   return { [id]: 0 }; //creates an array of objects. Each object is the id plus the corresponding counter
-// });
-let totalPriceofAllBasketItems = 0;
+function showBasket() {
+  shoppingCartContainer.classList.remove("invisible");
+  productsCartContent.classList.remove("invisible");
+}
+function hideBasket() {
+  productsCartContent.classList.add("invisible");
+}
 
-function addItemToBasket(e) {
-  if (productsCartContent.classList.contains("invisible")) {
-    productsCartContent.classList.remove("invisible");
-  }
-  const templateBasketItem = document.querySelector("#basket-item");
-  const templateBasketItemClone = templateBasketItem.content.cloneNode(true);
-  const currentProductType = templateBasketItemClone.querySelector(
-    `[data-basket-product-id]`
+function addBasketItemToList(selectedProduct) {
+  const existingProduct = itemsInBasket.find(
+    (item) => item.id === selectedProduct.id
   );
 
-  let productName =
-    e.target.previousElementSibling.querySelector("#product-name").innerText;
-  let productInfo = items.find((item) => {
-    return item.name === productName;
-  });
-  currentProductType.dataset.basketProductId = productInfo.id;
-  productInfo = { ...productInfo, counter: 0 };
-  //the below adds the selected product to the itemsInBasketArray if there isn't anything already there
-
-  const itemCount = templateBasketItemClone.querySelector("#basket-item-count");
-  itemCount.innerText = countIndividualBasketItems(productInfo.counter);
-
-  // const price = templateBasketItemClone.querySelector("#basket-item-price");
-  // price.innerText = calculateIndividualItemPrice(
-  //   productInfo.priceCents,
-  //   counter,
-  //   currentProductType
-  // )[0];
-
-  const color = templateBasketItemClone.querySelector("#basket-item-color");
-  color.innerText = productInfo.name;
-
-  // const totalPrice = productsCartContent.querySelector("#basket-total");
-  // totalPrice.innerText = calculateTotalPrice(
-  //   calculateIndividualItemPrice(
-  //     productInfo.priceCents,
-  //     counter,
-  //     currentProductType
-  //   )[1]
-  // );
-
-  const image = templateBasketItemClone.querySelector("#basket-item-image");
-  const imgURLStem = "https://dummyimage.com/420x260/";
-  image.src = `${imgURLStem}${productInfo.imageColor}/${productInfo.imageColor}`;
-
-  basketContainer.appendChild(templateBasketItemClone);
-
-  if (itemsInBasket.length === 0) {
-    itemsInBasket.push(productInfo);
-    //basketContainer.appendChild(templateBasketItemClone);
+  if (existingProduct != null) {
+    existingProduct.quantity++;
   } else {
-    updateBasket(
-      productInfo,
-      templateBasketItemClone,
-
-      currentProductType
-    );
+    itemsInBasket.push({ ...selectedProduct, quantity: 1 });
   }
 }
 
-function updateBasket(
-  productInfo,
-  templateBasketItemClone,
-  currentProductType
-) {
-  if (
-    itemsInBasket.some(
-      (product) =>
-        product.id.toString() === currentProductType.dataset.basketProductId
-    )
-  ) {
-    console.log("there was a match");
-    console.log(itemsInBasket);
-    let elToRemove = basketContainer.querySelector(
-      `[data-basket-product-id="${currentProductType.dataset.basketProductId}"]`
+function renderBasket(selectedProduct) {
+  basketContainer.innerHTML = ""; //clears the cart before rerendering
+
+  itemsInBasket.forEach((basketItem) => {
+    const templateBasketItem = document.querySelector("#basket-item");
+    const templateBasketItemClone = templateBasketItem.content.cloneNode(true);
+
+    const itemCount =
+      templateBasketItemClone.querySelector("#basket-item-count");
+    itemCount.innerText = basketItem.quantity;
+    //console.log(itemCount);
+    const price = templateBasketItemClone.querySelector("#basket-item-price");
+    price.innerText = currencyFormatter(
+      basketItem.priceCents * basketItem.quantity
     );
-    elToRemove.remove(); //removes the previous element that was created by the addItemToBasket
-  } else {
-    console.log("no match");
-    console.log(itemsInBasket);
-    itemsInBasket.push(productInfo);
+    const color = templateBasketItemClone.querySelector("#basket-item-color");
+    color.innerText = basketItem.name;
+    const image = templateBasketItemClone.querySelector("#basket-item-image");
+    const imgURLStem = "https://dummyimage.com/420x260/";
+    image.src = `${imgURLStem}${basketItem.imageColor}/${basketItem.imageColor}`;
+    //setting an id on the item so we can get it later
+    templateBasketItemClone.querySelector(
+      "[data-basket-product-id]"
+    ).dataset.basketProductId = basketItem.id;
+
     basketContainer.appendChild(templateBasketItemClone);
-  }
+  });
+
+  console.log(itemsInBasket);
+  let total = itemsInBasket.reduce((acc, currentItem) => {
+    return currentItem.quantity * currentItem.priceCents + acc;
+  }, 0);
+
+  const basketTotal = document.querySelector("#basket-total");
+  basketTotal.innerText = currencyFormatter(total);
 }
 
-function calculateIndividualItemPrice(priceCents, counter, currentProductType) {
-  let price =
-    (priceCents *
-      counter[currentProductType.dataset.productId - 1][
-        currentProductType.dataset.productId
-      ]) /
-    100;
-  let priceAsFloat = parseFloat(price).toFixed(2);
-  return [`$${priceAsFloat}`, priceAsFloat];
+function removeBasketItemFromList(e) {
+  //get product that was clicked on
+  let selectedProductId = parseInt(
+    e.target.closest("[data-basket-product-id]").dataset.basketProductId
+  );
+  //creates an array of the existing ids in the itemsinBasket array and gets the index of the id we clicked on
+  let position = itemsInBasket
+    .map((item) => item.id)
+    .indexOf(selectedProductId);
+
+  itemsInBasket.splice(position, 1);
+  renderBasket();
+  saveBasket();
 }
 
-function calculateTotalPrice() {
-  //get each product that is in the basket via the itemsInBasketIDs
-  //get the count of each item via the counter var
-  //multiply the number of one individual product type by its count for every type of
-  //product that's inthe basket. Add them together
+function saveBasket() {
+  localStorage.setItem(SAVED_ITEMS, JSON.stringify(itemsInBasket));
 }
-
-function countIndividualBasketItems(counter) {
-  counter += 1;
-
-  return counter;
-}
-
-/* 
-1. Check the parent of the "add to cart" button and then get the product image (using closest)
-   Get the image source of the product image and save to a var. Then insert that into the image
-   src of the basket item.
-   Do the same for the color, 
-   make a function that calculates the price of the item you clicked on and inserts it into
-   the price to the div with an id of price (inside th templatebasketitem clone)
-   make a function that adds the total of all the divs with the id of price
-*/

@@ -1,0 +1,28 @@
+
+
+
+1. make a function that creates a basket item. It should include the:
+ product name, price, count, product image 
+
+2. make a function that returns an array that holds each type of product that has been added
+to the basket. it includes all the product info. you call the first func based on this
+e.g. for each item in basket array. render basket item. It adds one to the quanity if it is clicked twice
+
+3. make a funcion that checks if that product type is already in the basket (using its id/local storage)
+
+4. make a function that updates the rendered product item if it's already in the basket. It should update the
+count and price 
+
+5. make a function that calcuates the total price and indiviudal price
+
+6. add items to local storage
+
+
+
+
+
+//add items to basket
+//remove items from basket
+//persist items across pages
+//show and hide the basket on click
+//handle basket updates to the basket (more than one item etc.)
