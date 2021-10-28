@@ -1,9 +1,5 @@
-/*
-1. Grab everything from the html
-2.   
+import setupStore from "./store";
+import setupCart from "./cart";
 
-
-*/
-
-import products from "./store";
-import cart from "./cart";
+setupStore();
+setupCart();

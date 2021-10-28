@@ -1,5 +1,5 @@
 15912
-130D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\scripts\script.js132792105544859105 0
+130D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\scripts\script.js132799063050826483 0
 161D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\fast-json-stable-stringify\index.js121436361000000000 0
 189D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\@parcel\core\test\fixtures\invalid-source-not-file\package.json121436361000000000 0
 199D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\stream-browserify\node_modules\readable-stream\lib\_stream_passthrough.js121436361000000000 0
@@ -17,7 +17,7 @@
 172D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\lmdb-store\dependencies\lmdb\libraries\liblmdb132792010148131147 1
 169D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\public-encrypt\node_modules\bn.js\lib\bn.js121436361000000000 0
 141D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\ws\package.json132792010276307883 0
-123D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\store.html132798970040539257 0
+123D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\store.html132799049247692283 0
 151D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\lodash\fp\differenceBy.js121436361000000000 0
 145D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\parse5\lib\index.js121436361000000000 0
 164D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\source-map\lib\source-map-generator.js131508293880000000 0
@@ -34,7 +34,7 @@
 158D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\postcss-value-parser\lib\walk.js121436361000000000 0
 164D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\w3c-xmlserializer\lib\XMLSerializer.js121436361000000000 0
 123D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\items.json132780911661884421 0
-117D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist132798973945652972 1
+117D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist132799063052204403 1
 135D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\hash-base132792010317239312 1
 161D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\es-abstract\2019\thisStringValue.js121436361000000000 0
 144D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\lodash\identity.js121436361000000000 0
@@ -164,7 +164,7 @@
 157D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\core-js\modules\es.math.sinh.js121436361000000000 0
 175D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\es-abstract\2016\OrdinaryCreateFromConstructor.js121436361000000000 0
 199D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\uncss\node_modules\postcss-selector-parser\dist\selectors\constructors.js121436361000000000 0
-128D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\scripts\cart.js132798973942468285 0
+128D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\scripts\cart.js132799062870980954 0
 193D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\postcss-modules-extract-imports\node_modules\chalk\types\index.d.ts121436361000000000 0
 143D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\uniq\package.json132792010320239930 0
 144D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\json5\package.json132792010405286422 0
@@ -188,7 +188,7 @@
 157D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\@babel\types\lib\clone\clone.js121012626000000000 0
 162D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\core-js\stable\array\virtual\keys.js121436361000000000 0
 162D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\postcss-modules-values\test\index.js131157075560000000 0
-165D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\scripts\notes. make a function that creates a basket132798889883311055 0
+165D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\scripts\notes. make a function that creates a basket132798983685198607 0
 148D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\lodash\defaultsDeep.js121436361000000000 0
 165D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\es-abstract\2019\IsSharedArrayBuffer.js121436361000000000 0
 179D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\split2\node_modules\readable-stream\errors-browser.js121436361000000000 0
@@ -198,7 +198,7 @@
 168D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\cssstyle\lib\properties\backgroundColor.js121436361000000000 0
 149D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\mdn-data\css\units.json121436361000000000 0
 192D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\uncss\node_modules\postcss-selector-parser\dist\selectors\index.js121436361000000000 0
-129D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\scripts\store.js132792101870093955 0
+129D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\scripts\store.js132799060921778155 0
 143D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\util\package.json132792010278174821 0
 141D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\xtend\README.md121436361000000000 0
 162D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\msgpackr-extract\prebuilds\linux-x64132792010130246019 1
@@ -10866,7 +10866,7 @@
 157D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\es-abstract\helpers\setProto.js121436361000000000 0
 163D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\es-abstract\5\CheckObjectCoercible.js121436361000000000 0
 155D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\es-abstract\5\DateFromTime.js121436361000000000 0
-134D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\team.33cab48a.js132798973945593122 0
+134D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\team.33cab48a.js132799063052161466 0
 148D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\es-abstract\5\floor.js121436361000000000 0
 163D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\es-abstract\5\IsAccessorDescriptor.js121436361000000000 0
 153D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\es-abstract\5\IsCallable.js121436361000000000 0
@@ -13609,7 +13609,7 @@
 161D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\core-js\es\string\virtual\anchor.js121436361000000000 0
 166D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\caniuse-lite\data\features\matchmedia.js121436361000000000 0
 168D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\core-js\es\string\virtual\code-point-at.js121436361000000000 0
-127D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\team.html132798970309268730 0
+127D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\team.html132799060931110043 0
 160D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\core-js\es\string\virtual\fixed.js121436361000000000 0
 170D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\caniuse-lite\data\features\es6-generators.js121436361000000000 0
 164D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\core-js\es\string\virtual\fontcolor.js121436361000000000 0
@@ -15663,7 +15663,7 @@
 193D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\@babel\helper-compilation-targets\node_modules\semver\bin\semver.js121436361000000000 0
 188D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\@babel\helper-compilation-targets\node_modules\.bin\semver.ps1132792010489695742 0
 179D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\@babel\helper-compilation-targets\lib\filter-items.js121012626000000000 0
-128D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\index.html132798970309268730 0
+128D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\index.html132799060931100074 0
 174D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\@babel\helper-compilation-targets\lib\options.js121012626000000000 0
 173D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\@babel\helper-compilation-targets\lib\pretty.js121012626000000000 0
 174D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\node_modules\@babel\helper-compilation-targets\lib\targets.js121012626000000000 0
@@ -15807,9 +15807,9 @@
 130D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\index.js.map132791993378310705 0
 135D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\store.459b4e39.js132792014717972248 0
 139D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\store.459b4e39.js.map132792014718131812 0
-128D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\store.html132798970309268730 0
+128D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\store.html132799060931100074 0
 138D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\team.2a86babe.js.map132798968514545128 0
-138D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\team.33cab48a.js.map132798973945633355 0
+138D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\dist\team.33cab48a.js.map132799063052194402 0
 122D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\.cache\00132791961915891835 1
 122D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\.cache\03132791961915891835 1
 122D:\Documents\01_Web_dev_studies\000RoadToFrontend\JS\Projects\Kyle\JavaScript-Simplified\74-shopping-cart\before\.cache\07132791961915891835 1
