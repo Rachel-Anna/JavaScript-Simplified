@@ -9,6 +9,7 @@ const basketContainer = document.querySelector("#basket-container");
 const productCartBtn = document.querySelector("#shopping-cart-btn");
 const LOCAL_STORAGE_PREFIX = "shopping-app";
 const SAVED_ITEMS = `${LOCAL_STORAGE_PREFIX}-basket`;
+const totalBtn = document.querySelector("#total-icon");
 
 let itemsInBasket = JSON.parse(localStorage.getItem(SAVED_ITEMS)) || [];
 
@@ -81,6 +82,7 @@ export default function setupCart() {
     if (itemsInBasket.length === 0) {
       hideBasket();
     }
+    totalBtn.innerText = itemsInBasket.length;
     itemsInBasket.forEach((basketItem) => {
       const templateBasketItem = document.querySelector("#basket-item");
       const templateBasketItemClone =
@@ -88,8 +90,9 @@ export default function setupCart() {
 
       const itemCount =
         templateBasketItemClone.querySelector("#basket-item-count");
-      itemCount.innerText = basketItem.quantity;
-      //console.log(itemCount);
+      itemCount.innerText =
+        basketItem.quantity > 1 ? `x${basketItem.quantity}` : "";
+
       const price = templateBasketItemClone.querySelector("#basket-item-price");
       price.innerText = currencyFormatter(
         basketItem.priceCents * basketItem.quantity
@@ -107,7 +110,6 @@ export default function setupCart() {
       basketContainer.appendChild(templateBasketItemClone);
     });
 
-    console.log(itemsInBasket);
     let total = itemsInBasket.reduce((acc, currentItem) => {
       return currentItem.quantity * currentItem.priceCents + acc;
     }, 0);
